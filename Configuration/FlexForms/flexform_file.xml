@@ -1,0 +1,120 @@
+<T3DataStructure>
+	<meta>
+	<langDisable>1</langDisable>
+	<!--  <langChildren>1</langChildren>!-->
+		</meta>
+<sheets>
+	<sDEF>
+	<ROOT>
+		<TCEforms>
+			<sheetTitle>LLL:EXT:file/Resources/Private/Language/locallang_db.xml:flexform_file.sheetgeneral</sheetTitle>
+		</TCEforms>
+		<type>array</type>
+		<el>
+			<switchableControllerActions>
+				<TCEforms>
+					<label>LLL:EXT:file/Resources/Private/Language/locallang_db.xml:flexform_file.actionSelection</label>
+					<onChange>reload</onChange>
+					<config>
+						<type>select</type>
+						<items type="array">
+							<numIndex index="0" type="array">
+								<numIndex index="0">LLL:EXT:file/Resources/Private/Language/locallang_db.xml:flexform_file.actionSelection.category</numIndex>
+								<numIndex index="1">Category->list;Category->show;File->list;File->show</numIndex>
+							</numIndex>
+							<numIndex index="1" type="array">
+								<numIndex index="0">LLL:EXT:file/Resources/Private/Language/locallang_db.xml:flexform_file.actionSelection.file</numIndex>
+								<numIndex index="1">File->list;File->show</numIndex>
+							</numIndex>
+							<numIndex index="2" type="array">
+								<numIndex index="0">LLL:EXT:file/Resources/Private/Language/locallang_db.xml:flexform_file.actionSelection.selection</numIndex>
+								<numIndex index="1">Selection->list;Selection->show;File->list;File->show</numIndex>
+							</numIndex>
+						</items>
+						<maxitems>1</maxitems>
+						<size>1</size>
+					</config>
+				</TCEforms>
+			</switchableControllerActions>
+			<settings.category>
+				<TCEforms>
+					<label>LLL:EXT:file/Resources/Private/Language/locallang_db.xml:flexform_file.category</label>
+					<displayCond>FIELD:switchableControllerActions:=:Category->list;Category->show;File->list;File->show</displayCond>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<allowed>tx_dam_cat</allowed>
+						<size>10</size>
+						<minitems>0</minitems>
+						<maxitems>9999</maxitems>
+					</config>
+				</TCEforms>
+			</settings.category>
+			<settings.recursive>
+				<TCEforms>
+					<label>LLL:EXT:file/Resources/Private/Language/locallang_db.xml:flexform_file.recursive</label>
+					<displayCond>FIELD:switchableControllerActions:=:Category->list;Category->show;File->list;File->show</displayCond>
+					<config>
+						<type>check</type>
+						<items type="array">
+							<numIndex index="0" type="array">
+								<numIndex index="0">LLL:EXT:file/Resources/Private/Language/locallang_db.xml:flexform_file.recursive.yes</numIndex>
+								<numIndex index="1">1</numIndex>
+							</numIndex>
+						</items>
+					</config>
+				</TCEforms>
+			</settings.recursive>
+			<settings.file>
+				<TCEforms>
+					<label>LLL:EXT:file/Resources/Private/Language/locallang_db.xml:flexform_file.file</label>
+					<displayCond>FIELD:switchableControllerActions:=:File->list;File->show</displayCond>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<allowed>tx_dam</allowed>
+						<size>10</size>
+						<minitems>0</minitems>
+						<maxitems>9999</maxitems>
+					</config>
+				</TCEforms>
+			</settings.file>
+			<settings.selection>
+				<TCEforms>
+					<label>LLL:EXT:file/Resources/Private/Language/locallang_db.xml:flexform_file.selection</label>
+					<displayCond>FIELD:switchableControllerActions:=:Selection->list;Selection->show;File->list;File->show</displayCond>
+					<config>
+						<type>group</type>
+						<internal_type>db</internal_type>
+						<allowed>tx_dam_selection</allowed>
+						<size>10</size>
+						<minitems>0</minitems>
+						<maxitems>9999</maxitems>
+					</config>
+				</TCEforms>
+			</settings.selection>
+			<settings.type>
+				<TCEforms>
+					<label>LLL:EXT:file/Resources/Private/Language/locallang_db.xml:flexform_file.type</label>
+					<config>
+						<type>select</type>
+						<items type="array">
+							<numIndex index="0" type="array">
+								<numIndex index="0">LLL:EXT:file/Resources/Private/Language/locallang_db.xml:flexform_file.type.gallery</numIndex>
+								<numIndex index="1">0</numIndex>
+							</numIndex>
+							<numIndex index="1" type="array">
+								<numIndex index="0">LLL:EXT:file/Resources/Private/Language/locallang_db.xml:flexform_file.type.list</numIndex>
+								<numIndex index="1">1</numIndex>
+							</numIndex>
+						</items>
+						<maxitems>1</maxitems>
+						<size>1</size>
+					</config>
+				</TCEforms>
+			</settings.type>
+		</el>
+	</ROOT>
+	</sDEF>
+</sheets>
+</T3DataStructure>

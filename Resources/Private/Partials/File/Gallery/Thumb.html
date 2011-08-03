@@ -1,0 +1,8 @@
+{namespace file=Tx_File_ViewHelpers}
+{namespace vh=Tx_ViewHelpers_ViewHelpers}
+
+<div class="left thumb">
+	<a href="{file.filePath}{file.fileName}" rel="photoGal{vh:calculation(expressionString:'(({pagination.current} - 1) * {settings.thumb.itemsPerPage}) + {fileIterator.index}')}">
+		<file:thumb src="{file.filePath}{file.fileName}" backgroundColor="{settings.thumb.backgroundColor}" borderWidth="{settings.thumb.borderWidth}" alt="{file.altText} {file.title}" title="{file.title}" maxWidth="{settings.thumb.maxWidth}" maxHeight="{settings.thumb.maxHeight}" />
+	</a>
+</div>

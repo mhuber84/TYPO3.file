@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the File handling extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_file_domain_model_file">File</label>
+			<label index="tx_file_domain_model_file.title">title</label>
+			<label index="tx_file_domain_model_file.file_name">fileName</label>
+			<label index="tx_file_domain_model_file.file_path">filePath</label>
+			<label index="tx_file_domain_model_file.file_download_name">fileDownloadName</label>
+			<label index="tx_file_domain_model_file.file_type">fileType</label>
+			<label index="tx_file_domain_model_file.file_type_version">fileTypeVersion</label>
+			<label index="tx_file_domain_model_file.file_size">fileSize</label>
+			<label index="tx_file_domain_model_file.file_original_location">fileOriginalLocation</label>
+			<label index="tx_file_domain_model_file.file_original_location_description">fileOriginalLocationDescription</label>
+			<label index="tx_file_domain_model_file.file_creator">fileCreator</label>
+			<label index="tx_file_domain_model_file.file_mime_type">fileMimeType</label>
+			<label index="tx_file_domain_model_file.file_mime_sub_type">fileMimeSubType</label>
+			<label index="tx_file_domain_model_file.file_ctime">fileCtime</label>
+			<label index="tx_file_domain_model_file.file_mtime">fileMtime</label>
+			<label index="tx_file_domain_model_file.file_usage">fileUsage</label>
+			<label index="tx_file_domain_model_file.ident">ident</label>
+			<label index="tx_file_domain_model_file.creator">creator</label>
+			<label index="tx_file_domain_model_file.publisher">publisher</label>
+			<label index="tx_file_domain_model_file.copyright">copyright</label>
+			<label index="tx_file_domain_model_file.keywords">keywords</label>
+			<label index="tx_file_domain_model_file.description">description</label>
+			<label index="tx_file_domain_model_file.caption">caption</label>
+			<label index="tx_file_domain_model_file.alt_text">altText</label>
+			<label index="tx_file_domain_model_file.instructions">instructions</label>
+			<label index="tx_file_domain_model_file.abstract">abstract</label>
+			<label index="tx_file_domain_model_file.date_cr">dateCr</label>
+			<label index="tx_file_domain_model_file.date_mod">dateMod</label>
+			<label index="tx_file_domain_model_file.loc_desc">locDesc</label>
+			<label index="tx_file_domain_model_file.loc_city">locCity</label>
+			<label index="tx_file_domain_model_file.horizontal_resolution">horizontalResolution</label>
+			<label index="tx_file_domain_model_file.vertical_resolution">verticalResolution</label>
+			<label index="tx_file_domain_model_file.horizontal_pixels">horizontalPixels</label>
+			<label index="tx_file_domain_model_file.vertical_pixels">verticalPixels</label>
+			<label index="tx_file_domain_model_file.color_space">colorSpace</label>
+			<label index="tx_file_domain_model_file.width">width</label>
+			<label index="tx_file_domain_model_file.height">height</label>
+			<label index="tx_file_domain_model_file.height_unit">heightUnit</label>
+			<label index="tx_file_domain_model_file.meta">meta</label>
+			<label index="tx_file_domain_model_file.category">category</label>
+			<label index="tx_file_domain_model_file.media_type">mediaType</label>
+			<label index="tx_file_domain_model_file.loc_country">locCountry</label>
+			<label index="tx_file_domain_model_category">Group files in categories</label>
+			<label index="tx_file_domain_model_category.title">title</label>
+			<label index="tx_file_domain_model_category.sub_title">subTitle</label>
+			<label index="tx_file_domain_model_category.nav_title">navTitle</label>
+			<label index="tx_file_domain_model_category.keywords">keywords</label>
+			<label index="tx_file_domain_model_category.description">description</label>
+			<label index="tx_file_domain_model_category.parent">parent</label>
+			<label index="tx_file_domain_model_selection">Group files in selections</label>
+			<label index="tx_file_domain_model_selection.title">title</label>
+			<label index="tx_file_domain_model_selection.definition">definition</label>
+			<label index="tx_file_domain_model_selection.type">type</label>
+			<label index="tx_file_domain_model_mediatype">MediaType</label>
+			<label index="tx_file_domain_model_mediatype.ext">ext</label>
+			<label index="tx_file_domain_model_mediatype.mime">mime</label>
+			<label index="tx_file_domain_model_mediatype.type">type</label>
+			<label index="tx_file_domain_model_staticcountries">StaticCountries</label>
+
+			<label index="fullSize">Full size</label>
+			<label index="previous">Previous page</label>
+			<label index="next">Next page</label>
+			<label index="page">Page</label>
+		</languageKey>
+		<languageKey index="de" type="array">
+			<label index="fullSize">Originalgröße</label>
+			<label index="previous">&lt;&lt; Zurück</label>
+			<label index="next">Nächste &gt;&gt;</label>
+			<label index="page">Seite</label>
+		</languageKey>
+	</data>
+</T3locallang>

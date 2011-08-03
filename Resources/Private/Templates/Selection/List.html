@@ -1,0 +1,41 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+<h1>Listing for Selection</h1>
+
+<f:flashMessages />
+
+<table  class="tx_file" >
+	<tr>
+		<th><f:translate key="tx_file_domain_model_selection.title" /></th>
+		<th><f:translate key="tx_file_domain_model_selection.definition" /></th>
+		<th><f:translate key="tx_file_domain_model_selection.type" /></th>
+		<th> </th>
+		<th> </th>
+	</tr>
+
+	<f:for each="{selections}" as="selection">
+		<tr>
+			<td><f:link.action action="show" arguments="{selection : selection}"> {selection.title}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{selection : selection}"> {selection.definition}</f:link.action></td>
+			<td><f:link.action action="show" arguments="{selection : selection}"> {selection.type}</f:link.action></td>
+			<td><f:link.action action="edit" arguments="{selection : selection}">Edit</f:link.action></td>
+			<td><f:link.action action="delete" arguments="{selection : selection}">Delete</f:link.action></td>
+		</tr>
+	</f:for>
+</table>
+
+<f:link.action action="new">New Selection</f:link.action>
+</f:section>

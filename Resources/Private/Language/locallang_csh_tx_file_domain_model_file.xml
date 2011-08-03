@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Context Sensitive Help (CSH) for table tx_file_domain_model_file</description>
+		<type>CSH</type>
+		<csh_table>tx_file_domain_model_file</csh_table>
+	</meta>
+	<data type="array">
+	<languageKey index="default" type="array">
+			<label index="title.description">title</label>
+			<label index="file_name.description">fileName</label>
+			<label index="file_path.description">filePath</label>
+			<label index="file_download_name.description">fileDownloadName</label>
+			<label index="file_type.description">fileType</label>
+			<label index="file_type_version.description">fileTypeVersion</label>
+			<label index="file_size.description">fileSize</label>
+			<label index="file_original_location.description">fileOriginalLocation</label>
+			<label index="file_original_location_description.description">fileOriginalLocationDescription</label>
+			<label index="file_creator.description">fileCreator</label>
+			<label index="file_mime_type.description">fileMimeType</label>
+			<label index="file_mime_sub_type.description">fileMimeSubType</label>
+			<label index="file_ctime.description">fileCtime</label>
+			<label index="file_mtime.description">fileMtime</label>
+			<label index="file_usage.description">fileUsage</label>
+			<label index="ident.description">ident</label>
+			<label index="creator.description">creator</label>
+			<label index="publisher.description">publisher</label>
+			<label index="copyright.description">copyright</label>
+			<label index="keywords.description">keywords</label>
+			<label index="description.description">description</label>
+			<label index="caption.description">caption</label>
+			<label index="alt_text.description">altText</label>
+			<label index="instructions.description">instructions</label>
+			<label index="abstract.description">abstract</label>
+			<label index="date_cr.description">dateCr</label>
+			<label index="date_mod.description">dateMod</label>
+			<label index="loc_desc.description">locDesc</label>
+			<label index="loc_city.description">locCity</label>
+			<label index="horizontal_resolution.description">horizontalResolution</label>
+			<label index="vertical_resolution.description">verticalResolution</label>
+			<label index="horizontal_pixels.description">horizontalPixels</label>
+			<label index="vertical_pixels.description">verticalPixels</label>
+			<label index="color_space.description">colorSpace</label>
+			<label index="width.description">width</label>
+			<label index="height.description">height</label>
+			<label index="height_unit.description">heightUnit</label>
+			<label index="meta.description">meta</label>
+			<label index="category.description">category</label>
+			<label index="media_type.description">mediaType</label>
+			<label index="loc_country.description">locCountry</label>
+		</languageKey>
+	</data>
+</T3locallang>
