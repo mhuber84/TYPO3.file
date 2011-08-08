@@ -85,6 +85,9 @@ class Tx_File_ViewHelpers_ThumbViewHelper extends Tx_Fluid_ViewHelpers_ImageView
 		if (TYPO3_MODE === 'BE' && substr($src, 0, 3) === '../') {
 			$src = substr($src, 3);
 		}
+		if(!in_array(substr($src, (strrpos($src, '.')+1)), explode(',', $GLOBALS['TYPO3_CONF_VARS']['GFX']['imagefile_ext']))){
+			$src = 'typo3conf/ext/file/Resources/Public/Icons/control/video-file64.png';
+		}
 		$setup = array(
 			'XY' => ($maxWidth+$borderWidth).','.($maxHeight+$borderWidth),
 			'backColor' => $backgroundColor,
@@ -94,8 +97,8 @@ class Tx_File_ViewHelpers_ThumbViewHelper extends Tx_Fluid_ViewHelpers_ImageView
 			'10.' => array(
 				'file' => $src,
 				'file.' => array(
-					'width' => $width,
-					'height' => $height,
+					//'width' => $width,
+					//'height' => $height,
 					'minW' => $minWidth,
 					'minH' => $minHeight,
 					'maxW' => $maxWidth,

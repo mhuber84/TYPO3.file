@@ -22,9 +22,16 @@
 		var prettyPhotoapi_titles = new Array();
 		var prettyPhotoapi_descriptions = new Array();
 		<f:for each="{files}" as="file" iteration="fileIterator">
-			prettyPhotoapi_images.push('{f:uri.image(src:"{file.filePath}{file.fileName}", maxWidth:"{settings.lightBox.maxWidth}", maxHeight:"{settings.lightBox.maxHeight}")}');
+			<f:if condition="{vh:isImage(image:'{file.fileName}')}">
+				<f:then>
+					prettyPhotoapi_images.push('{f:uri.image(src:"{file.filePath}{file.fileName}", maxWidth:"{settings.lightBox.maxWidth}", maxHeight:"{settings.lightBox.maxHeight}")}');
+				</f:then>
+				<f:else>
+					prettyPhotoapi_images.push('{file.filePath}{file.fileName}');
+				</f:else>
+			</f:if>
 			prettyPhotoapi_titles.push('<vh:jsString>{file.title}</vh:jsString>');
-			prettyPhotoapi_descriptions.push('<vh:jsString><p>{file.caption}</p><a href="{file.filePath}{file.fileName}" class="right" title="{file.title}" target="_blank"><f:translate key="fullSize" /></a></vh:jsString>');
+			prettyPhotoapi_descriptions.push('<vh:jsString><p>{file.caption}</p><a href="{file.filePath}{file.fileName}" class="right" title="{file.title}" target="_blank"><img src="typo3conf/ext/file/Resources/Public/Icons/control/download16.png" alt="<f:translate key='fullSize' />" style="vertical-align: bottom" /> <f:translate key="fullSize" /></a></vh:jsString>');
 		</f:for>
 		$(document).ready(function(){
 				$("a[rel^='photoGal']").click(function(e){
