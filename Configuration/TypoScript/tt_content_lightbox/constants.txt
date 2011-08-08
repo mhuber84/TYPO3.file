@@ -1,0 +1,11 @@
+plugin.tx_file {
+	settings {
+		tt_content {
+			navigable = 1
+			lightBox {
+				maxWidth = 800
+				maxHeight = 600
+			}
+		}
+	}
+}

@@ -57,86 +57,10 @@ class Tx_File_Controller_CategoryController extends Tx_Extbase_MVC_Controller_Ac
 	 */
 	public function listAction() {
 		$configuration = $this->configurationManager->getConfiguration(Tx_Extbase_Configuration_ConfigurationManagerInterface::CONFIGURATION_TYPE_FRAMEWORK);
-		if(empty($configuration['persistence']['storagePid'])){
-			$this->flashMessageContainer->add('No storagePid! You have to include the static template of this extension and set the constant plugin.tx_' . t3lib_div::lcfirst($this->extensionName) . '.persistence.storagePid in the constant editor');
-		}
-
 		$categories = explode(',', $this->settings['category']);
 		if(count($categories)==1){
 			$this->forward('list', 'File', 'File', $this->request->getArguments());
-		} else {
-			$categories = $this->categoryRepository->findAll();
-			$this->view->assign('categories', $categories);
 		}
 	}
-
-	/**
-	 * action show
-	 *
-	 * @param  $category
-	 * @return string The rendered show action
-	 */
-	public function showAction(Tx_File_Domain_Model_Category $category) {
-		$this->view->assign('category', $category);
-	}
-
-	/**
-	 * action new
-	 *
-	 * @param  $newCategory
-	 * @dontvalidate $newCategory
-	 * @return string The rendered new action
-	 */
-	public function newAction(Tx_File_Domain_Model_Category $newCategory = NULL) {
-		$this->view->assign('newCategory', $newCategory);
-	}
-
-	/**
-	 * action create
-	 *
-	 * @param  $newCategory
-	 * @return string The rendered create action
-	 */
-	public function createAction(Tx_File_Domain_Model_Category $newCategory) {
-		$this->categoryRepository->add($newCategory);
-		$this->flashMessageContainer->add('Your new Category was created.');
-		
-		$this->redirect('list');
-	}
-
-	/**
-	 * action edit
-	 *
-	 * @param  $category
-	 * @return string The rendered edit action
-	 */
-	public function editAction(Tx_File_Domain_Model_Category $category) {
-		$this->view->assign('category', $category);
-	}
-
-	/**
-	 * action update
-	 *
-	 * @param  $category
-	 * @return string The rendered update action
-	 */
-	public function updateAction(Tx_File_Domain_Model_Category $category) {
-		$this->categoryRepository->update($category);
-		$this->flashMessageContainer->add('Your Category was updated.');
-		$this->redirect('list');
-	}
-
-	/**
-	 * action delete
-	 *
-	 * @param  $category
-	 * @return string The rendered delete action
-	 */
-	public function deleteAction(Tx_File_Domain_Model_Category $category) {
-		$this->categoryRepository->remove($category);
-		$this->flashMessageContainer->add('Your Category was removed.');
-		$this->redirect('list');
-	}
-
 }
 ?>

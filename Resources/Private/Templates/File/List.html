@@ -4,7 +4,7 @@
 <f:layout name="Default" />
 
 <f:section name="gallery">
-	<vh:widget.paginate objects="{files}" as="paginatedFiles" pagination="pagination" configuration="{itemsPerPage: settings.thumb.itemsPerPage, insertAbove: 0, insertBelow: 1}">
+	<vh:widget.paginate objects="{files}" as="paginatedFiles" pagination="pagination" configuration="{itemsPerPage: settings.gallery.thumb.itemsPerPage, insertAbove: 0, insertBelow: 1}">
 		<div class="thumbnails clearfix">
 			<f:if condition="{category}">
 				<div class="left thumb">
@@ -24,7 +24,7 @@
 		<f:for each="{files}" as="file" iteration="fileIterator">
 			<f:if condition="{vh:isImage(image:'{file.fileName}')}">
 				<f:then>
-					prettyPhotoapi_images.push('{f:uri.image(src:"{file.filePath}{file.fileName}", maxWidth:"{settings.lightBox.maxWidth}", maxHeight:"{settings.lightBox.maxHeight}")}');
+					prettyPhotoapi_images.push('{f:uri.image(src:"{file.filePath}{file.fileName}", maxWidth:"{settings.gallery.lightBox.maxWidth}", maxHeight:"{settings.gallery.lightBox.maxHeight}")}');
 				</f:then>
 				<f:else>
 					prettyPhotoapi_images.push('{file.filePath}{file.fileName}');
@@ -44,99 +44,93 @@
 </f:section>
 
 <f:section name="list">
-<h1>Listing for File</h1>
+	<h1>Listing for File</h1>
 
-<f:flashMessages />
+	<f:flashMessages />
 
-<table  class="tx_file" >
-	<tr>
-		<th><f:translate key="tx_file_domain_model_file.title" /></th>
-		<th><f:translate key="tx_file_domain_model_file.file_name" /></th>
-		<th><f:translate key="tx_file_domain_model_file.file_path" /></th>
-		<th><f:translate key="tx_file_domain_model_file.file_download_name" /></th>
-		<th><f:translate key="tx_file_domain_model_file.file_type" /></th>
-		<th><f:translate key="tx_file_domain_model_file.file_type_version" /></th>
-		<th><f:translate key="tx_file_domain_model_file.file_size" /></th>
-		<th><f:translate key="tx_file_domain_model_file.file_original_location" /></th>
-		<th><f:translate key="tx_file_domain_model_file.file_original_location_description" /></th>
-		<th><f:translate key="tx_file_domain_model_file.file_creator" /></th>
-		<th><f:translate key="tx_file_domain_model_file.file_mime_type" /></th>
-		<th><f:translate key="tx_file_domain_model_file.file_mime_sub_type" /></th>
-		<th><f:translate key="tx_file_domain_model_file.file_ctime" /></th>
-		<th><f:translate key="tx_file_domain_model_file.file_mtime" /></th>
-		<th><f:translate key="tx_file_domain_model_file.file_usage" /></th>
-		<th><f:translate key="tx_file_domain_model_file.ident" /></th>
-		<th><f:translate key="tx_file_domain_model_file.creator" /></th>
-		<th><f:translate key="tx_file_domain_model_file.publisher" /></th>
-		<th><f:translate key="tx_file_domain_model_file.copyright" /></th>
-		<th><f:translate key="tx_file_domain_model_file.keywords" /></th>
-		<th><f:translate key="tx_file_domain_model_file.description" /></th>
-		<th><f:translate key="tx_file_domain_model_file.caption" /></th>
-		<th><f:translate key="tx_file_domain_model_file.alt_text" /></th>
-		<th><f:translate key="tx_file_domain_model_file.instructions" /></th>
-		<th><f:translate key="tx_file_domain_model_file.abstract" /></th>
-		<th><f:translate key="tx_file_domain_model_file.date_cr" /></th>
-		<th><f:translate key="tx_file_domain_model_file.date_mod" /></th>
-		<th><f:translate key="tx_file_domain_model_file.loc_desc" /></th>
-		<th><f:translate key="tx_file_domain_model_file.loc_city" /></th>
-		<th><f:translate key="tx_file_domain_model_file.horizontal_resolution" /></th>
-		<th><f:translate key="tx_file_domain_model_file.vertical_resolution" /></th>
-		<th><f:translate key="tx_file_domain_model_file.horizontal_pixels" /></th>
-		<th><f:translate key="tx_file_domain_model_file.vertical_pixels" /></th>
-		<th><f:translate key="tx_file_domain_model_file.color_space" /></th>
-		<th><f:translate key="tx_file_domain_model_file.width" /></th>
-		<th><f:translate key="tx_file_domain_model_file.height" /></th>
-		<th><f:translate key="tx_file_domain_model_file.height_unit" /></th>
-		<th><f:translate key="tx_file_domain_model_file.meta" /></th>
-		<th> </th>
-		<th> </th>
-	</tr>
-
-	<f:for each="{files}" as="file">
+	<table  class="tx_file" >
 		<tr>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.title}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.fileName}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.filePath}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.fileDownloadName}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.fileType}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.fileTypeVersion}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.fileSize}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.fileOriginalLocation}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.fileOriginalLocationDescription}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.fileCreator}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.fileMimeType}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.fileMimeSubType}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.fileCtime -> f:format.date()}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.fileMtime -> f:format.date()}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.fileUsage}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.ident}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.creator}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.publisher}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.copyright}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.keywords}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.description}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.caption}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.altText}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.instructions}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.abstract}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.dateCr -> f:format.date()}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.dateMod -> f:format.date()}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.locDesc}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.locCity}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.horizontalResolution}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.verticalResolution}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.horizontalPixels}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.verticalPixels}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.colorSpace}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.width}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.height}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.heightUnit}</f:link.action></td>
-			<td><f:link.action action="show" arguments="{file : file}"> {file.meta}</f:link.action></td>
-			<td><f:link.action action="edit" arguments="{file : file}">Edit</f:link.action></td>
-			<td><f:link.action action="delete" arguments="{file : file}">Delete</f:link.action></td>
+			<th><f:translate key="tx_file_domain_model_file.title" /></th>
+			<th><f:translate key="tx_file_domain_model_file.file_name" /></th>
+			<th><f:translate key="tx_file_domain_model_file.file_path" /></th>
+			<th><f:translate key="tx_file_domain_model_file.file_download_name" /></th>
+			<th><f:translate key="tx_file_domain_model_file.file_type" /></th>
+			<th><f:translate key="tx_file_domain_model_file.file_type_version" /></th>
+			<th><f:translate key="tx_file_domain_model_file.file_size" /></th>
+			<th><f:translate key="tx_file_domain_model_file.file_original_location" /></th>
+			<th><f:translate key="tx_file_domain_model_file.file_original_location_description" /></th>
+			<th><f:translate key="tx_file_domain_model_file.file_creator" /></th>
+			<th><f:translate key="tx_file_domain_model_file.file_mime_type" /></th>
+			<th><f:translate key="tx_file_domain_model_file.file_mime_sub_type" /></th>
+			<th><f:translate key="tx_file_domain_model_file.file_ctime" /></th>
+			<th><f:translate key="tx_file_domain_model_file.file_mtime" /></th>
+			<th><f:translate key="tx_file_domain_model_file.file_usage" /></th>
+			<th><f:translate key="tx_file_domain_model_file.ident" /></th>
+			<th><f:translate key="tx_file_domain_model_file.creator" /></th>
+			<th><f:translate key="tx_file_domain_model_file.publisher" /></th>
+			<th><f:translate key="tx_file_domain_model_file.copyright" /></th>
+			<th><f:translate key="tx_file_domain_model_file.keywords" /></th>
+			<th><f:translate key="tx_file_domain_model_file.description" /></th>
+			<th><f:translate key="tx_file_domain_model_file.caption" /></th>
+			<th><f:translate key="tx_file_domain_model_file.alt_text" /></th>
+			<th><f:translate key="tx_file_domain_model_file.instructions" /></th>
+			<th><f:translate key="tx_file_domain_model_file.abstract" /></th>
+			<th><f:translate key="tx_file_domain_model_file.date_cr" /></th>
+			<th><f:translate key="tx_file_domain_model_file.date_mod" /></th>
+			<th><f:translate key="tx_file_domain_model_file.loc_desc" /></th>
+			<th><f:translate key="tx_file_domain_model_file.loc_city" /></th>
+			<th><f:translate key="tx_file_domain_model_file.horizontal_resolution" /></th>
+			<th><f:translate key="tx_file_domain_model_file.vertical_resolution" /></th>
+			<th><f:translate key="tx_file_domain_model_file.horizontal_pixels" /></th>
+			<th><f:translate key="tx_file_domain_model_file.vertical_pixels" /></th>
+			<th><f:translate key="tx_file_domain_model_file.color_space" /></th>
+			<th><f:translate key="tx_file_domain_model_file.width" /></th>
+			<th><f:translate key="tx_file_domain_model_file.height" /></th>
+			<th><f:translate key="tx_file_domain_model_file.height_unit" /></th>
+			<th><f:translate key="tx_file_domain_model_file.meta" /></th>
 		</tr>
-	</f:for>
-</table>
 
-<f:link.action action="new">New File</f:link.action>
+		<f:for each="{files}" as="file">
+			<tr>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.title}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.fileName}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.filePath}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.fileDownloadName}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.fileType}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.fileTypeVersion}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.fileSize}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.fileOriginalLocation}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.fileOriginalLocationDescription}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.fileCreator}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.fileMimeType}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.fileMimeSubType}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.fileCtime -> f:format.date()}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.fileMtime -> f:format.date()}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.fileUsage}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.ident}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.creator}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.publisher}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.copyright}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.keywords}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.description}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.caption}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.altText}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.instructions}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.abstract}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.dateCr -> f:format.date()}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.dateMod -> f:format.date()}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.locDesc}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.locCity}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.horizontalResolution}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.verticalResolution}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.horizontalPixels}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.verticalPixels}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.colorSpace}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.width}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.height}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.heightUnit}</f:link.action></td>
+				<td><f:link.action action="show" arguments="{file : file}"> {file.meta}</f:link.action></td>
+			</tr>
+		</f:for>
+	</table>
 </f:section>

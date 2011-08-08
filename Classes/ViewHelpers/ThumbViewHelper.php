@@ -45,22 +45,10 @@
 class Tx_File_ViewHelpers_ThumbViewHelper extends Tx_Fluid_ViewHelpers_ImageViewHelper {
 
 	/**
-	 * @var array
-	 */
-	protected $typoScriptSetup;
-
-	/**
-	 * @param Tx_Extbase_Configuration_ConfigurationManagerInterface $configurationManager
-	 * @return void
-	 */
-	public function injectConfigurationManager(Tx_Extbase_Configuration_ConfigurationManagerInterface $configurationManager) {
-		$this->configurationManager = $configurationManager;
-		$this->contentObject = $this->configurationManager->getContentObject();
-		$this->typoScriptSetup = $this->configurationManager->getConfiguration(Tx_Extbase_Configuration_ConfigurationManagerInterface::CONFIGURATION_TYPE_FULL_TYPOSCRIPT);
-	}
-
-	/**
 	 * Resizes a given image (if required) and renders the respective img tag
+	 * 
+	 * Clone of the ImageViewHelper but adds a background and a border and centers the image
+	 * 
 	 * @see http://typo3.org/documentation/document-library/references/doc_core_tsref/4.2.0/view/1/5/#id4164427
 	 *
 	 * @param string $src

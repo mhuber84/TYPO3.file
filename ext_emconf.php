@@ -18,7 +18,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'author_email' => 'mail@marco-huber.de',
 	'author_company' => '',
 	'shy' => '',
-	'dependencies' => 'cms,extbase,fluid,dam,static_info_tables,extbase_staticinfotables',
+	'dependencies' => 'cms,extbase,fluid,dam,static_info_tables,extbase_staticinfotables,view_helpers',
 	'conflicts' => '',
 	'priority' => '',
 	'module' => '',
@@ -38,6 +38,7 @@ $EM_CONF[$_EXTKEY] = array(
 			'dam' => '',
 			'static_info_tables' => '',
 			'extbase_staticinfotables' => '',
+			'view_helpers' => '',
 		),
 		'conflicts' => array(
 		),

@@ -15,5 +15,8 @@ t3lib_extMgm::addPiFlexFormValue($pluginSignature, 'FILE:EXT:' . $_EXTKEY . '/Co
 
 
 
-t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'File handling');
+t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/basic', 'tx_file Basics for Lightbox and File handling plugins');
+t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/tt_content_lightbox', 'tx_file Lightbox for tt_content Text-Pic');
+t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/file', 'tx_file Basics for File handling plugins');
+t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript/gallery', 'tx_file Gallery plugin');
 ?>

@@ -1,0 +1,14 @@
+page {
+	includeJSlibs {
+		jQuery = http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js
+		jQuery.external = 1
+		jQueryUi = http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js
+		jQueryUi.external = 1
+		prettyPhoto = typo3conf/ext/file/Resources/Public/PrettyPhoto/prettyPhoto_compressed_3.1.2/js/jquery.prettyPhoto.js
+		prettyPhotoInit = typo3conf/ext/file/Resources/Public/Javascript/prettyPhotoInit.js
+	}
+	includeCSS {
+		prettyPhoto = typo3conf/ext/file/Resources/Public/PrettyPhoto/prettyPhoto_compressed_3.1.2/css/prettyPhoto.css
+		prettyPhotoTheme = typo3conf/ext/file/Resources/Public/Css/prettyPhotoTheme.css
+	}
+}

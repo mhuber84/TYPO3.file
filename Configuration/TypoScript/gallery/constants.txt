@@ -1,0 +1,15 @@
+plugin.tx_file {
+	settings {
+		gallery {
+			lightBox {
+				maxWidth = 800
+				maxHeight = 600
+			}
+			thumb {
+				maxWidth = 160
+				maxHeight = 160
+				itemsPerPage = 23
+			}
+		}
+	}
+}

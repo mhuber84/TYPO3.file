@@ -1,0 +1,41 @@
+tt_content.image.20.1 {
+	# Removing the default "imageLinkWrap" TS code, and add new one to enable Lightbox effect.
+	imageLinkWrap >
+	imageLinkWrap = 1
+	imageLinkWrap {
+		# Enable linkwrapping if either click-enlarge is selected or a link is defined.
+		enable.field = image_zoom
+		enable.ifEmpty.typolink.parameter.field = image_link
+		enable.ifEmpty.typolink.parameter.listNum.stdWrap.data = register : IMAGE_NUM_CURRENT
+		enable.ifEmpty.typolink.returnLast = url
+
+		# Add new typolink wrapping code
+		typolink {
+			target = {$styles.content.links.target}
+			extTarget = {$styles.content.links.extTarget}
+
+			# This returns a link, pointing to the path + name of the original image.
+			# or to the path + name of the resized lightbox image (if maxH or maxW is reached.)
+			parameter.cObject = IMG_RESOURCE
+			parameter.cObject.file.import.data = TSFE:lastImageInfo|origFile
+			parameter.cObject.file.maxW = {$plugin.tx_file.settings.tt_content.lightBox.maxWidth}
+			parameter.cObject.file.maxH = {$plugin.tx_file.settings.tt_content.lightBox.maxHeight}
+
+			# Except if the linkfield is not empty
+			parameter.override.field = image_link
+			parameter.override.listNum.stdWrap.data = register : IMAGE_NUM_CURRENT
+			parameter.override.if.isTrue.field = image_link
+
+			# Add the "rel" attribute needed to activate the lightbox effect.
+			ATagParams = rel="prettyPhoto" title="{field:txdam_caption}"
+			ATagParams.override = rel="prettyPhoto[pp_gal]" title="{field:txdam_caption}"
+			ATagParams.override.if.isTrue = {$plugin.tx_file.settings.tt_content.navigable}
+			ATagParams.override.if.value = 1
+			ATagParams.override.if.isGreaterThan.data = register : IMAGE_NUM
+
+			ATagParams.insertData = 1
+			ATagParams.if.isTrue.field = image_zoom
+			ATagParams.if.isFalse.field = image_link
+		}
+	}
+}

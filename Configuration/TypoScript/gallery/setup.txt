@@ -1,0 +1,23 @@
+plugin.tx_file {
+	settings {
+		gallery {
+			lightBox {
+				maxWidth = {$plugin.tx_file.settings.gallery.lightBox.maxWidth}
+				maxHeight = {$plugin.tx_file.settings.gallery.lightBox.maxHeight}
+			}
+			thumb {
+				maxWidth = {$plugin.tx_file.settings.gallery.thumb.maxWidth}
+				maxHeight = {$plugin.tx_file.settings.gallery.thumb.maxHeight}
+				borderWidth = 10
+				backgroundColor = #FFFFFF
+				itemsPerPage = {$plugin.tx_file.settings.gallery.thumb.itemsPerPage}
+			}
+		}
+	}
+}
+
+page {
+	includeCSS {
+		gallery = typo3conf/ext/file/Resources/Public/Css/gallery.css
+	}
+}
