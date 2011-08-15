@@ -1,3 +1,91 @@
+config.tx_extbase.persistence.classes {
+    Tx_File_Domain_Model_Category {
+        newRecordStoragePid = {$plugin.tx_file.persistence.storagePid}
+        mapping {
+            tableName = tx_dam_cat
+            columns {
+                title.mapOnProperty = title
+                nav_title.mapOnProperty = navTitle
+                subtitle.mapOnProperty = subTitle
+                keywords.mapOnProperty = keywords
+                description.mapOnProperty = description
+                parent_id.mapOnProperty = parent
+            }
+        }
+    }
+    Tx_File_Domain_Model_Selection {
+        newRecordStoragePid = {$plugin.tx_file.persistence.storagePid}
+        mapping {
+            tableName = tx_dam_selection
+            columns {
+                title.mapOnProperty = title
+                definition.mapOnProperty = definition
+                type.mapOnProperty = type
+            }
+        }
+    }
+    Tx_File_Domain_Model_MediaType {
+        newRecordStoragePid = {$plugin.tx_file.persistence.storagePid}
+        mapping {
+            tableName = tx_dam_media_types
+            columns {
+                ext.mapOnProperty = ext
+                mime.mapOnProperty = mime
+                type.mapOnProperty = type
+            }
+        }
+    }
+    Tx_File_Domain_Model_File {
+        newRecordStoragePid = {$plugin.tx_file.persistence.storagePid}
+        mapping {
+            tableName = tx_dam
+            columns {
+                title.mapOnProperty = title
+                file_name.mapOnProperty = fileName
+                file_path.mapOnProperty = filePath
+                file_dl_name.mapOnProperty = fileDownloadName
+                file_type.mapOnProperty = fileType
+                file_type_version.mapOnProperty = fileTypeVersion
+                file_size.mapOnProperty = fileSize
+                file_orig_location.mapOnProperty = fileOriginalLocation
+                file_orig_loc_desc.mapOnProperty = fileOriginalLocationDescription
+                file_creator.mapOnProperty = fileCreator
+                file_mime_type.mapOnProperty = fileMimeType
+                file_mime_subtype.mapOnProperty = fileMimeSubType
+                file_ctime.mapOnProperty = fileCtime
+                file_mtime.mapOnProperty = fileMtime
+                file_usage.mapOnProperty = fileUsage
+                ident.mapOnProperty = ident
+                creator.mapOnProperty = creator
+                publisher.mapOnProperty = publisher
+                copyright.mapOnProperty = copyright
+                keywords.mapOnProperty = keywords
+                description.mapOnProperty = description
+                caption.mapOnProperty = caption
+                alt_text.mapOnProperty = altText
+                instructions.mapOnProperty = instructions
+                abstract.mapOnProperty = abstract
+                date_cr.mapOnProperty = dateCr
+                date_mod.mapOnProperty = dateMod
+                loc_desc.mapOnProperty = locDesc
+                loc_city.mapOnProperty = locCity
+                hres.mapOnProperty = horizontalResolution
+                vres.mapOnProperty = verticalResolution
+                hpixels.mapOnProperty = horizontalPixels
+                vpixels.mapOnProperty = verticalPixels
+                color_space.mapOnProperty = colorSpace
+                width.mapOnProperty = width
+                height.mapOnProperty = height
+                height_unit.mapOnProperty = heightUnit
+                meta.mapOnProperty = meta
+                category.mapOnProperty = category
+                media_type.mapOnProperty = mediaType
+                #loc_country.mapOnProperty = locCountry
+            }
+        }
+    }
+}
+
 plugin.tx_file {
 	settings {
 	}
@@ -8,92 +96,5 @@ plugin.tx_file {
 	}
 	persistence {
 		storagePid = {$plugin.tx_file.persistence.storagePid}
-		classes {
-			Tx_File_Domain_Model_Category {
-				newRecordStoragePid = {$plugin.tx_file.persistence.storagePid}
-				mapping {
-					tableName = tx_dam_cat
-					columns {
-						title.mapOnProperty = title
-						nav_title.mapOnProperty = navTitle
-						subtitle.mapOnProperty = subTitle
-						keywords.mapOnProperty = keywords
-						description.mapOnProperty = description
-						parent_id.mapOnProperty = parent
-					}
-				}
-			}
-			Tx_File_Domain_Model_Selection {
-				newRecordStoragePid = {$plugin.tx_file.persistence.storagePid}
-				mapping {
-					tableName = tx_dam_selection
-					columns {
-						title.mapOnProperty = title
-						definition.mapOnProperty = definition
-						type.mapOnProperty = type
-					}
-				}
-			}
-			Tx_File_Domain_Model_MediaType {
-				newRecordStoragePid = {$plugin.tx_file.persistence.storagePid}
-				mapping {
-					tableName = tx_dam_media_types
-					columns {
-						ext.mapOnProperty = ext
-						mime.mapOnProperty = mime
-						type.mapOnProperty = type
-					}
-				}
-			}
-			Tx_File_Domain_Model_File {
-				newRecordStoragePid = {$plugin.tx_file.persistence.storagePid}
-				mapping {
-					tableName = tx_dam
-					columns {41
-						title.mapOnProperty = title
-						file_name.mapOnProperty = fileName
-						file_path.mapOnProperty = filePath
-						file_dl_name.mapOnProperty = fileDownloadName
-						file_type.mapOnProperty = fileType
-						file_type_version.mapOnProperty = fileTypeVersion
-						file_size.mapOnProperty = fileSize
-						file_orig_location.mapOnProperty = fileOriginalLocation
-						file_orig_loc_desc.mapOnProperty = fileOriginalLocationDescription
-						file_creator.mapOnProperty = fileCreator
-						file_mime_type.mapOnProperty = fileMimeType
-						file_mime_subtype.mapOnProperty = fileMimeSubType
-						file_ctime.mapOnProperty = fileCtime
-						file_mtime.mapOnProperty = fileMtime
-						file_usage.mapOnProperty = fileUsage
-						ident.mapOnProperty = ident
-						creator.mapOnProperty = creator
-						publisher.mapOnProperty = publisher
-						copyright.mapOnProperty = copyright
-						keywords.mapOnProperty = keywords
-						description.mapOnProperty = description
-						caption.mapOnProperty = caption
-						alt_text.mapOnProperty = altText
-						instructions.mapOnProperty = instructions
-						abstract.mapOnProperty = abstract
-						date_cr.mapOnProperty = dateCr
-						date_mod.mapOnProperty = dateMod
-						loc_desc.mapOnProperty = locDesc
-						loc_city.mapOnProperty = locCity
-						hres.mapOnProperty = horizontalResolution
-						vres.mapOnProperty = verticalResolution
-						hpixels.mapOnProperty = horizontalPixels
-						vpixels.mapOnProperty = verticalPixels
-						color_space.mapOnProperty = colorSpace
-						width.mapOnProperty = width
-						height.mapOnProperty = height
-						height_unit.mapOnProperty = heightUnit
-						meta.mapOnProperty = meta
-						category.mapOnProperty = category
-						media_type.mapOnProperty = mediaType
-						#loc_country.mapOnProperty = locCountry
-					}
-				}
-			}
-		}
 	}
 }
